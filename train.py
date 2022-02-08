@@ -17,8 +17,6 @@ parser.add_argument('--root_path', type=str,
                     default='./data/Synapse', help='root dir for data') 
 parser.add_argument('--list_dir', type=str,
                     default='./data/lists_Synapse', help='list dir')
-# parser.add_argument('--split', type=str,
-#                     default='train', help='select procedure among: train / test')
 parser.add_argument('--model_name', type=str,
                     default='TransUnet', help='select one vit model among: Unet / TransUnet / MedicalTransformer / Segmenter')
 parser.add_argument('--num_classes', type=int,
@@ -85,7 +83,7 @@ if __name__ == "__main__":
         #     activation=None,
         #     aux_params=None).cuda()
 
-        
+
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
 

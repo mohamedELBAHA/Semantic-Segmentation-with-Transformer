@@ -10,24 +10,7 @@ data
         └──case0001_slice000.npz
         └──case0001_slice001.npz
         ...
+
+
     └──lists_Synapse
         └──train.txt
-
-
-
-
-
-
-<!-- data
-    └──Synapse
-        └──Train
-            └──case0001_slice000.npz
-            └──case0001_slice001.npz
-            ...
-        └──Test
-            └──case0002_slice000.npz
-            └──case0002_slice001.npz
-            ...
-    └──lists_Synapse
-        └──train.txt
-        └──text.txt -->
