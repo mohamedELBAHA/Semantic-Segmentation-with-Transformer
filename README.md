@@ -15,7 +15,10 @@ structures of interest in medical imaging are required, in particular for the se
 abdomen (liver, kidneys, spleen, pancreas...).
 
 ----
-In this project, we implemented different models for medical image segmentation using pytorch,  
+In this project, we implemented different models for medical image segmentation using pytorch, this repository hosts the code for the following Networks :
+1 - U-Net 
+2 - Segmenter 
+3 - Medical Transfomer
 
 
 The work was supervised by Mr Conze and Mr Jaouen.
@@ -25,7 +28,7 @@ The work was supervised by Mr Conze and Mr Jaouen.
 
 # Citations
 
-> @article{chen2021transunet,
+@article{chen2021transunet,
   title={TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation},
   author={Chen, Jieneng and Lu, Yongyi and Yu, Qihang and Luo, Xiangde and Adeli, Ehsan and Wang, Yan and Lu, Le and Yuille, Alan L., and Zhou, Yuyin},
   journal={arXiv preprint arXiv:2102.04306},
