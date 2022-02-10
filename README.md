@@ -13,6 +13,8 @@ segmentation of anatomical structures is still largely performed manually, slice
 Methodological developments allowing an automated and precise delimitation of structures of interest in
 structures of interest in medical imaging are required, in particular for the segmentation of abdominal organs (liver
 abdomen (liver, kidneys, spleen, pancreas...).
+![image](Semantic-Segmentation-with-Transformer/pictures/Picture 1.png)
+
 
 ----
 In this project, we implemented different models for medical image segmentation using pytorch, this repository hosts the code for the following Networks :
