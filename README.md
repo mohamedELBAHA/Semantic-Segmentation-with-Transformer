@@ -16,15 +16,13 @@ abdomen (liver, kidneys, spleen, pancreas...).
 
 ----
 In this project, we implemented different models for medical image segmentation using pytorch, this repository hosts the code for the following Networks :
-1 - U-Net 
-2 - Segmenter 
-3 - Medical Transfomer
+1. U-Net ( Full convolutional neural network ).
+2. Segmenter ( Full transformers ).
+3. Medical Transfomer ( A hybrid architecture CNN + Transformers ). 
 
 
-The work was supervised by Mr Conze and Mr Jaouen.
-
-
-
+# Acknowledgement:
+The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
 
 # Citations
 
