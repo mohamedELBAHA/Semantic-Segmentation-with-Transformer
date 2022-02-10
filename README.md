@@ -24,10 +24,10 @@ In this project, we implemented different models for medical image segmentation 
 3. Medical Transfomer ( A hybrid architecture CNN + Transformers ). 
 
 
-# Acknowledgement:
+### Acknowledgement:
 The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
 
-# Citations
+### Citations
 
 @article{chen2021transunet,
   title={TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation},
