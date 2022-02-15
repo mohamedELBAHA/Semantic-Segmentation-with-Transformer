@@ -30,7 +30,7 @@ Please prepare an environment with python, and then use the command "pip install
 
 ####  2. Dataset
 
-Please follow the instructions in the [README.md](data/README.md) in the "data" directory to be able to use the code in this github correctly.
+Please follow the instructions in the [README.md](data/README.md) in the [/data](data) directory to be able to use the code in this github correctly.
 
 ####  3. Pretrained models
 
