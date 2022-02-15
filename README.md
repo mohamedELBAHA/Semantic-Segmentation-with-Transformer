@@ -26,7 +26,7 @@ In this project, we implemented different models for medical image semantic segm
 
 Please prepare an environment with python, and then use the command "pip install -r requirements.txt" for the dependencies.
 
-Please follow the instructions in the README.md in the ![/data](data/README.md) directory to be able to use the code in this github correctly.
+Please follow the instructions in the README.md in the [/data](data/README.md) directory to be able to use the code in this github correctly.
 
 
 If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the README in the "segmentation_models/transunet/vit_checkpoint" directory
