@@ -12,6 +12,11 @@ from segmentation_models.transunet.vit_seg_modeling import VisionTransformer as 
 from segmentation_models.transunet.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
 
 
+# Unet
+from segmentation_models.unet import create_model
+
+# Arguments for implementation of the model
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--root_path', type=str,
                     default='./data/Synapse', help='root dir for data') 
@@ -33,12 +38,11 @@ parser.add_argument('--img_size', type=int,
                     default=256, help='input patch size of network input')
 parser.add_argument('--in_channels', type=int,
                     default=1, help='input channel size of network input')
-parser.add_argument('--is_pretrain', type=bool,
-                    default=True, help='pretrain model or not')
+parser.add_argument('--is_pretrain', action='store_true', help='pretrain model or not')
 
-# Argument for Normalization
-parser.add_argument('--apply_normalization', type=bool,
-                    default=True, help='normalization or not of your dataset (you have to know the mean and the std of your dataset)')
+# Arguments for normalization
+
+parser.add_argument('--apply_normalization', action='store_true', help='normalization of your dataset (you have to know the mean and the std of your dataset)')
 parser.add_argument('--mean', type=int,
                     default=89.67757, help='mean of your dataset')
 parser.add_argument('--std', type=bool,
@@ -56,6 +60,7 @@ if __name__ == "__main__":
     snapshot_path = snapshot_path + '_'+str(args.img_size)
     snapshot_path = snapshot_path + '_pretrain' if args.is_pretrain else snapshot_path
 
+    # TransUnet
     if args.model_name == 'TransUnet':
         config_vit = CONFIGS_ViT_seg['R50-ViT-B_16']
         config_vit.n_classes = args.num_classes
@@ -69,24 +74,29 @@ if __name__ == "__main__":
             pretrained_path='./segmentation_models/transunet/vit_checkpoint/R50-ViT-B_16.npz'
             net.load_from(weights=np.load(pretrained_path)) 
 
-    # if args.model_name.find('Unet') != -1:
+    # Unet
+    if args.model_name == 'Unet':
+        if args.is_pretrain:
+            weights_unet='imagenet'
+        else:
+            weights_unet=None
 
-        # net=create_model('Unet',
-        #     encoder_name='resnet34',
-        #     encoder_depth=5,
-        #     encoder_weights='imagenet',
-        #     decoder_use_batchnorm=True,
-        #     decoder_channels=(256, 128, 64, 32, 16),
-        #     decoder_attention_type=None,
-        #     in_channels=1,
-        #     classes=args.num_classes,
-        #     activation=None,
-        #     aux_params=None).cuda()
-
+        net = create_model('Unet',
+            encoder_name='resnet34',
+            encoder_depth=5,
+            encoder_weights=weights_unet,
+            decoder_use_batchnorm=True,
+            decoder_channels=(256, 128, 64, 32, 16),
+            decoder_attention_type=None,
+            in_channels=1,
+            classes=5,
+            activation=None,
+            aux_params=None).cuda()
+    
 
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
 
 
-
+    # Training
     trainer_synapse(args, net, snapshot_path)
