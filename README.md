@@ -36,6 +36,12 @@ Please follow the instructions in the [README.md](data/README.md) in the "data" 
 
 If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the "segmentation_models/transunet/vit_checkpoint" directory.
 
+####  4. Training
+
+Run the train script on synapse dataset.
+
+python train.py 
+
 ### Acknowledgement:
 The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
 
