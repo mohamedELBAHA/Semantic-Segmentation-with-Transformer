@@ -18,18 +18,23 @@ abdomen (liver, kidneys, spleen, pancreas...).
 
 ----
 In this project, we implemented different models for medical image semantic segmentation using pytorch, this repository hosts the code for the following Networks :
-1. Unet ( Full convolutional neural network ).
-2. Segmenter ( Full transformers ).
-3. Medical Transfomer & TransUnet( Hybrid architectures: CNN + Transformers ). 
+1. Unet (Full convolutional neural network).
+2. Segmenter (Full transformers).
+3. Medical Transfomer & TransUnet(Hybrid architectures: CNN + Transformers). 
 
 ### Implementation:
 
+#####  1. Environment
+
 Please prepare an environment with python, and then use the command "pip install -r requirements.txt" for the dependencies.
+
+#####  2. Dataset
 
 Please follow the instructions in the [README.md](data/README.md) in the "data" directory to be able to use the code in this github correctly.
 
+#####  3. Pretrained models
 
-If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the "segmentation_models/transunet/vit_checkpoint" directory
+If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the "segmentation_models/transunet/vit_checkpoint" directory.
 
 ### Acknowledgement:
 The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
