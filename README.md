@@ -38,9 +38,7 @@ If you want to use the transunet model where the encoder weights have already be
 
 ####  4. Training
 
-Run the train script on synapse dataset.
-
-python train.py 
+Run the train script on synapse dataset: python train.py 
 
 ### Acknowledgement:
 The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
