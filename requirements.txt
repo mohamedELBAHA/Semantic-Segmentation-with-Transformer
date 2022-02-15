@@ -5,6 +5,4 @@ tqdm
 tensorboard
 tensorboardX
 ml-collections
-medpy
-SimpleITK
 scipy
