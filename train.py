@@ -15,6 +15,10 @@ from segmentation_models.transunet.vit_seg_modeling import CONFIGS as CONFIGS_Vi
 # Unet
 from segmentation_models.unet import create_model
 
+
+# MedT
+from segmentation_models.medt import gated
+
 # Arguments for implementation of the model
 
 parser = argparse.ArgumentParser()
@@ -93,7 +97,12 @@ if __name__ == "__main__":
             activation=None,
             aux_params=None).cuda()
     
-
+    if args.model_name == 'MedT':
+        net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes)
+    
+    if args.model_name == 'Segmenter':
+        pass
+    
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
 
