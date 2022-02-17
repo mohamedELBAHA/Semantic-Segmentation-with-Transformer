@@ -1,3 +1,7 @@
+### Implemention from
+# https://github.com/jeya-maria-jose/Medical-Transformer
+# https://arxiv.org/abs/2102.10662 
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
