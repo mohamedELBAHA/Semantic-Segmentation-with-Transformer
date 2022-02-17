@@ -17,7 +17,7 @@ from segmentation_models.unet import create_model
 
 
 # MedT
-from segmentation_models.medt import gated
+from segmentation_models.medt.medt import gated
 
 # Arguments for implementation of the model
 
@@ -27,7 +27,7 @@ parser.add_argument('--root_path', type=str,
 parser.add_argument('--list_dir', type=str,
                     default='./data/lists_Synapse', help='list dir')
 parser.add_argument('--model_name', type=str,
-                    default='TransUnet', help='select one vit model among: Unet / TransUnet / MedicalTransformer / Segmenter')
+                    default='TransUnet', help='select one vit model among: Unet / TransUnet / MedT / Segmenter')
 parser.add_argument('--num_classes', type=int,
                     default=5, help='output channel of network') 
 parser.add_argument('--max_iterations', type=int,
@@ -63,6 +63,7 @@ if __name__ == "__main__":
     snapshot_path = snapshot_path + '_lr' + str(args.base_lr) if args.base_lr != 0.01 else snapshot_path
     snapshot_path = snapshot_path + '_'+str(args.img_size)
     snapshot_path = snapshot_path + '_pretrain' if args.is_pretrain else snapshot_path
+    snapshot_path = snapshot_path + '_normalized' if args.apply_normalization else snapshot_path
 
     # TransUnet
     if args.model_name == 'TransUnet':
@@ -98,7 +99,7 @@ if __name__ == "__main__":
             aux_params=None).cuda()
     
     if args.model_name == 'MedT':
-        net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes)
+        net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes).cuda()
     
     if args.model_name == 'Segmenter':
         pass
