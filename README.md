@@ -34,11 +34,19 @@ Please follow the instructions in the [README.md](data/README.md) in the [/data]
 
 ####  3. Pretrained models
 
-If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the [/segmentation_models/transunet/vit_checkpoint](segmentation_models/transunet/vit_checkpoint) directory.
+If you want to use the transunet or unet models where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the [/segmentation_models/transunet/vit_checkpoint](segmentation_models/transunet/vit_checkpoint) directory.
 
 ####  4. Training
 
-Run the train script on synapse dataset: python train.py 
+Run the train script on synapse dataset with: python train.py 
+
+You can change different hyperparameters related to the learning of the model in the parser argument present in the function train.py
+
+if you want to use the models with your weights already trained on Imagenet, complete the parser argument with --is_pretrain.
+Then call the training function by completing it with: --is_pretrain
+
+If you want to use a normalized dataset, complete the parser argument with --apply_normalization. You must then know the mean (X) and std (Y) of your dataset. 
+Then call the training function by completing it with: --apply_normalization --mean X --std Y
 
 ### Acknowledgement:
 The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
