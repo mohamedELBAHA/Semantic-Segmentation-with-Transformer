@@ -51,9 +51,15 @@ The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
 
 ### Citations
 
-@article{chen2021transunet,
-  title={TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation},
-  author={Chen, Jieneng and Lu, Yongyi and Yu, Qihang and Luo, Xiangde and Adeli, Ehsan and Wang, Yan and Lu, Le and Yuille, Alan L., and Zhou, Yuyin},
-  journal={arXiv preprint arXiv:2102.04306},
-  year={2021}
-}
+#### Medical Transformer
+https://github.com/jeya-maria-jose/Medical-Transformer
+https://arxiv.org/abs/2102.10662 
+
+#### TransUNet
+https://github.com/Beckschen/TransUNet
+https://arxiv.org/abs/2102.04306
+
+#### UNet
+https://github.com/qubvel/segmentation_models.pytorch
+https://arxiv.org/abs/1505.04597
+
