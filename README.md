@@ -53,13 +53,16 @@ The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
 
 #### Medical Transformer
 https://github.com/jeya-maria-jose/Medical-Transformer
+
 https://arxiv.org/abs/2102.10662 
 
 #### TransUNet
 https://github.com/Beckschen/TransUNet
+
 https://arxiv.org/abs/2102.04306
 
 #### UNet
 https://github.com/qubvel/segmentation_models.pytorch
+
 https://arxiv.org/abs/1505.04597
 
