@@ -14,13 +14,12 @@ case0001_slice002
 
 The directory structure of the whole project is as follows:
 
-data
+
+└──data
     └──Synapse
         └──case0001_slice000.npz
         └──case0001_slice001.npz
         ...
-
-
     └──lists_Synapse
         └──train.txt
 
