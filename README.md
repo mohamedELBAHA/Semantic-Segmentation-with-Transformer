@@ -1,6 +1,6 @@
 # Transformers for multi-organ segmentation in abdominal imaging
 
-### Context
+### Context:
 The rapid development of non-invasive medical imaging technologies has opened new horizons in the study of
 anatomy. The segmentation of 3D images by magnetic resonance imaging (MRI) has become a
 a crucial step for many applications: computer-aided diagnosis, surgical planning, image-guided interventions, extraction of quantitative indices...
@@ -20,6 +20,7 @@ In this project, we implemented different models for medical image semantic segm
 1. Unet (Full convolutional neural network).
 2. Segmenter (Full transformers).
 3. Medical Transfomer & TransUnet(Hybrid architectures: CNN + Transformers). 
+
 
 ### Implementation:
 
@@ -46,10 +47,12 @@ if you want to use the models with your weights already trained on Imagenet, cal
 If you want to use a normalized dataset, you must then know the mean (X) and std (Y) of your dataset. 
 Then call the training file by completing it with: --apply_normalization --mean X --std Y
 
+
 ### Acknowledgement:
 The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
 
-### Citations
+
+### Citations:
 
 #### Medical Transformer
 https://github.com/jeya-maria-jose/Medical-Transformer
