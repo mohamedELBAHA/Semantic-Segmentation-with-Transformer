@@ -38,7 +38,7 @@ If you want to use the transunet or unet models where the encoder weights have a
 
 ####  4. Training
 
-Run the train script on synapse dataset and choose the model to train with: python train.py --model_name xxxxx. Select one model among: Unet / TransUnet / MedicalTransformer / Segmenter'
+Run the train script on synapse dataset and choose the model to train with: python train.py --model_name xxxxx. Select one model among: 'Unet / TransUnet / MedicalTransformer / Segmenter'.
 
 You can change different hyperparameters related to the learning of the model in the parser argument present in the file train.py
 
