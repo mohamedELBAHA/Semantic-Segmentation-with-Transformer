@@ -42,7 +42,7 @@ parser.add_argument('--img_size', type=int,
                     default=256, help='input patch size of network input')
 parser.add_argument('--in_channels', type=int,
                     default=1, help='input channel size of network input')
-parser.add_argument('--is_pretrain', action='store_true', help='pretrain model or not')
+parser.add_argument('--is_pretrained', action='store_true', help='pretrained model or not')
 
 # Arguments for normalization
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     snapshot_path = snapshot_path+'_bs'+str(args.batch_size)
     snapshot_path = snapshot_path + '_lr' + str(args.base_lr) if args.base_lr != 0.01 else snapshot_path
     snapshot_path = snapshot_path + '_'+str(args.img_size)
-    snapshot_path = snapshot_path + '_pretrain' if args.is_pretrain else snapshot_path
+    snapshot_path = snapshot_path + '_pretrain' if args.is_pretrained else snapshot_path
 
     # TransUnet
     if args.model_name == 'TransUnet':
@@ -74,13 +74,13 @@ if __name__ == "__main__":
 
         net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
         
-        if args.is_pretrain:
+        if args.is_pretrained:
             pretrained_path='./segmentation_models/transunet/vit_checkpoint/R50-ViT-B_16.npz'
             net.load_from(weights=np.load(pretrained_path)) 
 
     # Unet
     if args.model_name == 'Unet':
-        if args.is_pretrain:
+        if args.is_pretrained:
             weights_unet='imagenet'
         else:
             weights_unet=None
