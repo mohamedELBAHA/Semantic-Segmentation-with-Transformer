@@ -10,8 +10,7 @@ fully robust to low contrast, anatomical variability and noise intrinsic to medi
 medical images. Although time consuming and subject to significant intra/inter-expert variability, segmentation of anatomical
 structures is still largely performed manually, slice by slice.
 Methodological developments allowing an automated and precise delimitation of structures of interest in
-medical imaging are required, in particular for the segmentation of abdominal organs (liver
-abdomen (liver, kidneys, spleen, pancreas...).
+medical imaging are required, in particular for the segmentation of abdominal organs (liver, kidneys, spleen, pancreas...).
 
 ![image](pictures/Picture1.png)
 
@@ -30,7 +29,7 @@ Please prepare an environment with python, and then use the command "pip install
 
 ####  2. Dataset
 
-Please follow the instructions in the [README.md](data/README.md) in the [/data](data) directory to be able to use the code in this github correctly.
+Please follow the instructions in the [README.md](data/README.md) in the [/data](data) directory to be able to use the code in this github with your data correctly.
 
 ####  3. Pretrained models
 
@@ -40,12 +39,12 @@ If you want to use the transunet or unet models where the encoder weights have a
 
 Run the train script on synapse dataset with: python train.py 
 
-You can change different hyperparameters related to the learning of the model in the parser argument present in the function train.py
+You can change different hyperparameters related to the learning of the model in the parser argument present in the file train.py
 
-if you want to use the models with your weights already trained on Imagenet, call the training function by completing it with: --is_pretrained
+if you want to use the models with your weights already trained on Imagenet, call the training file by completing it with: --is_pretrained
 
 If you want to use a normalized dataset, you must then know the mean (X) and std (Y) of your dataset. 
-Then call the training function by completing it with: --apply_normalization --mean X --std Y
+Then call the training file by completing it with: --apply_normalization --mean X --std Y
 
 ### Acknowledgement:
 The work was supervised by Mr Pierre-Henri Conze and Mr Vincent Jaouen.
