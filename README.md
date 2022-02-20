@@ -2,12 +2,9 @@
 
 ### Context:
 The rapid development of non-invasive medical imaging technologies has opened new horizons in the study of
-anatomy. The segmentation of 3D images by magnetic resonance imaging (MRI) has become a
-a crucial step for many applications: computer-aided diagnosis, surgical planning, image-guided interventions, extraction of quantitative indices...
+anatomy. The segmentation of 3D images by magnetic resonance imaging (MRI) has become a crucial step for many applications: computer-aided diagnosis, surgical planning, image-guided interventions, extraction of quantitative indices...
 However, the analysis of complex and heterogeneous imaging data sets is tedious for radiologists, clinicians and
-researchers. Moreover, the techniques developed to date are not entirely robust to low contrast
-fully robust to low contrast, anatomical variability and noise intrinsic to medical images.
-medical images. Although time consuming and subject to significant intra/inter-expert variability, segmentation of anatomical
+researchers. Moreover, the techniques developed to date are not fully robust to low contrast, anatomical variability and intrinsic noise in medical images. Although time consuming and subject to significant intra/inter-expert variability, segmentation of anatomical
 structures is still largely performed manually, slice by slice.
 Methodological developments allowing an automated and precise delimitation of structures of interest in
 medical imaging are required, in particular for the segmentation of abdominal organs (liver, kidneys, spleen, pancreas...).
@@ -42,7 +39,7 @@ Run the train script on synapse dataset and choose the model to train with: pyth
 
 You can change different hyperparameters related to the learning of the model in the parser argument present in the file train.py
 
-if you want to use the models with your weights already trained on Imagenet, call the training file by completing it with: --is_pretrained
+If you want to use the models with your weights already trained on Imagenet, call the training file by completing it with: --is_pretrained
 
 If you want to use a normalized dataset, you must then know the mean (X) and std (Y) of your dataset. 
 Then call the training file by completing it with: --apply_normalization --mean X --std Y
