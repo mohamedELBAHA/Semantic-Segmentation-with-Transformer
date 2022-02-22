@@ -27,3 +27,4 @@ data
         └──train.txt
 
 
+As an example, we have provided the 2D sections of the CHAOS dataset of patients numbered 1 to 33 for training the model.
