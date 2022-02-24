@@ -31,7 +31,7 @@ Please follow the instructions in the [README.md](data/README.md) in the [/data]
 
 ####  3. Pretrained models
 
-If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the [/segmentation_models/transunet/vit_checkpoint](segmentation_models/transunet/vit_checkpoint) directory.
+If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the [/segmentation_models/transunet/vit_checkpoint](segmentation_models/transunet/vit_checkpoint) directory.  
 If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/segmenter/README.md) in the [/segmentation_models/segmenter](segmentation_models/segmenter) directory.
 
 ####  4. Training
