@@ -31,8 +31,8 @@ Please follow the instructions in the [README.md](data/README.md) in the [/data]
 
 ####  3. Pretrained models
 
-If you want to use the transunet model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the [/segmentation_models/transunet/vit_checkpoint](segmentation_models/transunet/vit_checkpoint) directory.  
-If you want to use the segmenter model where the encoder weights have already been trained on imagenet, please follow the instructions in the [README.md](segmentation_models/segmenter/README.md) in the [/segmentation_models/segmenter](segmentation_models/segmenter) directory.
+If you want to use the transunet model where the encoder weights have already been trained on ImageNet, please follow the instructions in the [README.md](segmentation_models/transunet/vit_checkpoint/README.md) in the [/segmentation_models/transunet/vit_checkpoint](segmentation_models/transunet/vit_checkpoint) directory.  
+If you want to use the segmenter model where the encoder weights have already been trained on ImageNet, please follow the instructions in the [README.md](segmentation_models/segmenter/README.md) in the [/segmentation_models/segmenter](segmentation_models/segmenter) directory.
 
 ####  4. Training
 
@@ -40,7 +40,7 @@ Run the train script on synapse dataset and choose the model to train with: pyth
 
 You can change different hyperparameters related to the learning of the model in the parser argument present in the file train.py
 
-If you want to use the models with your weights already trained on Imagenet, call the training file by completing it with: --is_pretrained
+If you want to use the models with your weights already trained on ImageNet, call the training file by completing it with: --is_pretrained
 
 If you want to use a normalized dataset, you must then know the mean (X) and std (Y) of your dataset. 
 Then call the training file by completing it with: --apply_normalization --mean X --std Y
