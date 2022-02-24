@@ -1,3 +1,8 @@
+### Implemention from
+# https://github.com/Beckschen/TransUNet
+# https://arxiv.org/abs/2102.04306
+
+
 # coding=utf-8
 from __future__ import absolute_import
 from __future__ import division

@@ -16,8 +16,12 @@ from segmentation_models.transunet.vit_seg_modeling import CONFIGS as CONFIGS_Vi
 from segmentation_models.unet import create_model
 
 
-# MedT
-from segmentation_models.medt.medt import gated
+# MedicalTransformer
+from segmentation_models.medt import gated
+
+
+# Sementic Segmenter
+from segmentation_models.segmenter import load_model_segmenter
 
 # Arguments for implementation of the model
 
@@ -27,7 +31,7 @@ parser.add_argument('--root_path', type=str,
 parser.add_argument('--list_dir', type=str,
                     default='./data/lists_Synapse', help='list dir')
 parser.add_argument('--model_name', type=str,
-                    default='TransUnet', help='select one vit model among: Unet / TransUnet / MedT / Segmenter')
+                    default='TransUnet', help='select one vit model among: Unet / TransUnet / MedicalTransformer / Segmenter')
 parser.add_argument('--num_classes', type=int,
                     default=5, help='output channel of network') 
 parser.add_argument('--max_iterations', type=int,
@@ -42,7 +46,7 @@ parser.add_argument('--img_size', type=int,
                     default=256, help='input patch size of network input')
 parser.add_argument('--in_channels', type=int,
                     default=1, help='input channel size of network input')
-parser.add_argument('--is_pretrain', action='store_true', help='pretrain model or not')
+parser.add_argument('--is_pretrained', action='store_true', help='pretrained model or not')
 
 # Arguments for normalization
 
@@ -75,13 +79,13 @@ if __name__ == "__main__":
 
         net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
         
-        if args.is_pretrain:
+        if args.is_pretrained:
             pretrained_path='./segmentation_models/transunet/vit_checkpoint/R50-ViT-B_16.npz'
             net.load_from(weights=np.load(pretrained_path)) 
 
     # Unet
     if args.model_name == 'Unet':
-        if args.is_pretrain:
+        if args.is_pretrained:
             weights_unet='imagenet'
         else:
             weights_unet=None
@@ -98,12 +102,12 @@ if __name__ == "__main__":
             activation=None,
             aux_params=None).cuda()
     
-    if args.model_name == 'MedT':
-        net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes).cuda()
+    if args.model_name == 'MedicalTransformer':
+        net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes)
     
     if args.model_name == 'Segmenter':
-        pass
-    
+        net = load_model_segmenter("/segmentation_models/segmenter/", args.is_pretrained, imgchan=args.in_channels, num_classes=args.num_classes)
+
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
 
