@@ -6,3 +6,4 @@ tensorboard
 tensorboardX
 ml-collections
 scipy
+einops

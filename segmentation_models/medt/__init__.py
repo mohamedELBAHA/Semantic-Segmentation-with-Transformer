@@ -1,0 +1,1 @@
+from .medt import gated

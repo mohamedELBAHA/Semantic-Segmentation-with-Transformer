@@ -20,8 +20,8 @@ from segmentation_models.unet import create_model
 from segmentation_models.medt import gated
 
 
-# Sementic Segmenter
-from segmentation_models.segmenter import load_model_segmenter
+# Segmenter
+from segmentation_models.segmenter.segmenter import load_model_segmenter
 
 # Arguments for implementation of the model
 
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     snapshot_path = snapshot_path+'_bs'+str(args.batch_size)
     snapshot_path = snapshot_path + '_lr' + str(args.base_lr) if args.base_lr != 0.01 else snapshot_path
     snapshot_path = snapshot_path + '_'+str(args.img_size)
-    snapshot_path = snapshot_path + '_pretrain' if args.is_pretrain else snapshot_path
+    snapshot_path = snapshot_path + '_pretrain' if args.is_pretrained else snapshot_path
     snapshot_path = snapshot_path + '_normalized' if args.apply_normalization else snapshot_path
 
     # TransUnet
@@ -103,10 +103,10 @@ if __name__ == "__main__":
             aux_params=None).cuda()
     
     if args.model_name == 'MedicalTransformer':
-        net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes)
+        net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes).cuda()
     
     if args.model_name == 'Segmenter':
-        net = load_model_segmenter("/segmentation_models/segmenter/", args.is_pretrained, imgchan=args.in_channels, num_classes=args.num_classes)
+        net = load_model_segmenter("./segmentation_models/segmenter/", args.is_pretrained, nb_channel=args.in_channels, nb_class=args.num_classes).cuda()
 
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
