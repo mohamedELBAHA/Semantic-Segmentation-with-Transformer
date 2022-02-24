@@ -19,6 +19,10 @@ from segmentation_models.unet import create_model
 # MedicalTransformer
 from segmentation_models.medt import gated
 
+
+# Sementic Segmenter
+from segmentation_models.segmenter import load_model_segmenter
+
 # Arguments for implementation of the model
 
 parser = argparse.ArgumentParser()
@@ -101,8 +105,8 @@ if __name__ == "__main__":
         net = gated(img_size=args.img_size, imgchan=args.in_channels, num_classes=args.num_classes)
     
     if args.model_name == 'Segmenter':
-        pass
-    
+        net = load_model_segmenter("/segmentation_models/segmenter/", args.is_pretrained, imgchan=args.in_channels, num_classes=args.num_classes)
+
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
 
