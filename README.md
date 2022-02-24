@@ -16,7 +16,7 @@ medical imaging are required, in particular for the segmentation of abdominal or
 In this project, we implemented different models for medical image semantic segmentation using pytorch, this repository hosts the code for the following Networks :
 1. Unet (Full convolutional neural network).
 2. Segmenter (Full transformers).
-3. Medical Transfomer & TransUnet(Hybrid architectures: CNN + Transformers). 
+3. Medical Transfomer & TransUnet (Hybrid architectures: CNN + Transformers). 
 
 
 ### Implementation:
