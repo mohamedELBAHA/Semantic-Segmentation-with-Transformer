@@ -21,7 +21,7 @@ from segmentation_models.medt import gated
 
 
 # Segmenter
-from segmentation_models.segmenter.segmenter import load_model_segmenter
+from segmentation_models.segmenter import load_model_segmenter
 
 # Arguments for implementation of the model
 
